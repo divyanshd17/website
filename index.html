@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Divyansh Dewangan Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      min-height: 100vh;
+      background-color: #0e0e0e;
+      color: white;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #101e2c;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .profile-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      object-fit: cover;
+    }
+
+    .name {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .socials a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .nav {
+      width: 100%;
+    }
+
+    .nav a {
+      display: flex;
+      align-items: center;
+      padding: 10px 15px;
+      margin: 5px 0;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+    }
+
+    .nav a:hover, .nav a.active {
+      background-color: #1e2f46;
+    }
+
+    @keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main {
+  flex: 1;
+  background-image: url('body.jpeg');
+  background-size: cover;
+  background-position: center;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: white;
+  animation: fadeInZoom 3s ease-out;
+}
+
+.intro {
+  max-width: 500px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 12px;
+  animation: slideUp 1.2s ease-out;
+}
+
+    }
+
+    .intro {
+      max-width: 500px;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 12px;
+    }
+
+    .intro h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .intro p {
+      font-size: 20px;
+      font-weight: 300;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <img src="side.jpeg" class="profile-img" />
+    <div class="name">Divyansh Dewangan</div>
+    <div class="socials">
+
+<a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_google-one-tap-submit" target="_blank">
+ <img src="https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/linkedin.svg" alt="LinkedIn" style="width:24px; height:24px; filter: grayscale(100%) brightness(0) invert(1);">
+
+</a>
+<a href="https://www.instagram.com/_divyansh.04_/" target="_blank">
+  <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" style="width:24px; height:24px; filter: grayscale(100%) brightness(0) invert(1);">
+</a>
+
+
+
+
+<a href="https://github.com/divyanshd17" target="_blank">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" style="width:24px; height:24px; filter: grayscale(100%) brightness(0) invert(1);">
+</a>
+
+    </div>
+    <div class="nav">
+      <a href="file:///C:/Users/HP/Desktop/portfolio/inside.html#about">About</a>
+      <a href="file:///C:/Users/HP/Desktop/portfolio/inside.html#projects">Projects</a>
+      <a href="file:///C:/Users/HP/Desktop/portfolio/inside.html#certificates">Certificates</a>
+      <a href="file:///C:/Users/HP/Desktop/portfolio/inside.html#contact">Contact</a>
+    </div>
+  </div>
+  <div class="main">
+    <div class="intro">
+      <h1>Divyansh Dewangan</h1>
+      <p>ECE undergraduate passionate about building smart tech solutions. Experienced in projects like Water Level Indicator, RFID Attendance, and Smart Parking Systems.</p>
+    </div>
+  </div>
+</body>
+</html>

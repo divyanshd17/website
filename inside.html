@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Divyansh Dewangan's Portfolio</title>
+  <style>
+    /* RESET & BASE */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background: #fdfdfd;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #1f1f1f;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+
+    .navbar .logo:hover {
+      transform: scale(1.05);
+      color: #00bcd4;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease, transform 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      display: block;
+      width: 0%;
+      height: 2px;
+      background: #00bcd4;
+      transition: width 0.3s ease;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+    }
+
+    .nav-links a:hover {
+      color: #00bcd4;
+      transform: scale(1.05);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* SECTIONS */
+    .section {
+      padding: 100px 20px 60px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #00bcd4;
+    }
+
+    p, li {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    /* PROJECTS */
+    .projects {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .project-card {
+      background: #eee;
+      padding: 1rem;
+      flex: 1 1 250px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.4s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 10px 20px rgba(0, 188, 212, 0.2);
+    }
+
+    /* CONTACT FORM */
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 500px;
+    }
+
+    form input,
+    form textarea {
+      padding: 10px;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    form input:focus,
+    form textarea:focus {
+      border-color: #00bcd4;
+      box-shadow: 0 0 5px rgba(0, 188, 212, 0.4);
+      outline: none;
+    }
+
+    form button {
+      padding: 10px;
+      background: #00bcd4;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    form button:hover {
+      background: #0097a7;
+      transform: scale(1.05);
+    }
+
+    /* CERTIFICATES, EDUCATION ITEMS */
+    .certificate, .education-item {
+      background: #eee;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1f1f1f;
+      color: white;
+      margin-top: 60px;
+    }
+
+    /* ANIMATIONS */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .section:nth-child(odd) .fade-in {
+      animation-delay: 0.3s;
+    }
+
+    .section:nth-child(even) .fade-in {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* SPACING BELOW FIXED NAV */
+    .spacer {
+      height: 80px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Divyansh Dewangan</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="spacer"></div>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="fade-in">
+      <h2>About Me</h2>
+      <p>
+        I'm an enthusiastic Electronics and Communication Engineering (ECE) student who loves building smart and useful tech projects. So far, I’ve worked on 3 practical projects that gave me great hands-on experience. One of them is a Water Level Indicator using an ultrasonic sensor and ESP32, which helps monitor and control water levels automatically — it can alert users when the tank is about to overflow or go empty. I also created an RFID-based Attendance System to make student attendance faster and more accurate, cutting down manual effort by over 70%. Another project I worked on is a Smart Parking System, which detects available parking slots in real-time, helping reduce the time drivers spend looking for a spot.
+      </p>
+      <p>
+        These projects have helped me understand how to turn classroom learning into real-world solutions, and I’m excited to keep building smart and helpful electronic systems in the future.
+      </p>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="section">
+    <div class="fade-in">
+      <h2>Education</h2>
+      <div class="education-item">
+        <h3>MIT-WPU, Pune</h3>
+        <p>B.Tech in Electronics and Communication Engineering<br>2023 – 2027</p>
+      </div>
+      <div class="education-item">
+        <h3>Kendriya Vidyalaya, Raipur</h3>
+        <p>Senior Secondary School (PCM + Computer Science)<br>
+        2020 – 2022<br>
+        Secondary School Examination (2020): 93%<br>
+        Higher Secondary School Examination (2022): 77%</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <div class="fade-in">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="project-card">
+          <h3>Water Level Indicator</h3>
+          <p>Made using Ultrasonic sensor and ESP32 to monitor water level in tanks.</p>
+        </div>
+        <div class="project-card">
+          <h3>Portfolio Website</h3>
+          <p>A simple and responsive personal website made with HTML and CSS.</p>
+        </div>
+        <div class="project-card">
+          <h3>RFID Attendance System</h3>
+          <p>Automated attendance system using RFID tags and ESP microcontroller.</p>
+        </div>
+        <div class="project-card">
+          <h3>Smart Parking System</h3>
+          <p>Real-time available slot detection using sensors and microcontroller.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Skills Section -->
+<section id="skills" class="section">
+  <div class="fade-in">
+    <h2>Skills</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>Programming Languages</h3>
+        <p>C, C++, Python, MATLAB</p>
+      </div>
+      <div class="project-card">
+        <h3>Design Tools</h3>
+        <p>Canva</p>
+      </div>
+      <div class="project-card">
+        <h3>Languages</h3>
+        <p>German (Beginner)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Certificates Section -->
+<section id="certificates" class="section">
+  <div class="fade-in">
+    <h2>Certificates</h2>
+
+    <ul>
+      <li>
+        <strong>Signal Processing Onramp - MATLAB Simulink</strong><br>
+        <a href="spoc.pdf" target="_blank">View Certificate</a>
+      </li>
+
+      <li>
+        <strong>Arduino Training</strong><br>
+        <a href="DIVYANSH-DEWANGAN-Participant-Certificate.pdf" target="_blank">View Certificate</a>
+      </li>
+
+      <li>
+        <strong>Indian Knowledge Systems</strong><br>
+        <a href="certificate-of-completion-for-introduction-to-bharatiya-knowledge-systems-iks (1).pdf" target="_blank">View Certificate</a>
+      </li>
+
+      <li>
+        <strong>Critical Thinking & Problem Solving</strong><br>
+        <a href="critical.pdf" target="_blank">View Certificate</a>
+      </li>
+
+      <li>
+        <strong>Teamwork & Collaboration</strong><br>
+        <a href="teamwork.pdf" target="_blank">View Certificate</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="fade-in">
+      <h2>Contact</h2>
+      <p>Work Email id: <a href="mailto:divyansh.dewangan@mitwpu.edu.in">divyansh.dewangan@mitwpu.edu.in</a></p>
+      <p>Personal Email id: <a href="mailto:divyanshdewangan2@gmail.com">divyanshdewangan2@gmail.com</a></p>
+      <p>Contact No: 8269356203</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Built by Divyansh with ❤️ and code.</p> 
+  </footer>
+
+</body>
+</html>
